@@ -1,4 +1,4 @@
-:root{
+:root{ /* variables for later use */
     --hover: #FFFF00;
     --offwhite:#f8f8ff;
     --opblack:rgba(0, 0, 0, 0.5);
@@ -15,36 +15,56 @@
 .main{
     display:inline-block;
     width: 100%;
-    margin-top: 10%;
+    margin-top: 2.5%;
     }
 .about-me{
     display:inline-block;
     width: 100%;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
+    
 }
+ .flex {
+    width: 100%;
+    height:500px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow:auto;
+    margin-top: 10%;
+    padding-top: 10%;
+    padding-bottom: 20%;
+    margin-bottom: 20%;
+    flex-direction: row;
+   }
+
 
 
 body {
     background-image:linear-gradient(to left,#29323c, #485563);
    }
-header{
+header{ /*geneva skyline*/
     margin-left: 20px;
-    margin-top: 50px;
-    padding-bottom: 10px;
-    margin-bottom: 50px;
+    margin-top: 70px;
+    padding-top: 50px;
+    padding-bottom: 120px;
+    background-image:url(./images/genevea.png);
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
 }
 
-header h1 {
+header h1 { /*my initials (might replace with art later)*/
    display: inline-block;
+   margin-top: 70px;
    float: left;
    font-size: 40px;
    font-weight: bold;
+   
 }
-header h1:hover{
+header h1:hover{ /*change color to yellow on mouse hover*/
     color: var(--hover);
 }
 
-nav  {  
+nav  {  /*navigation at top*/
     display: inline-block;
     margin-right:20px;
     float: right;
@@ -52,25 +72,26 @@ nav  {
     font-weight: bold;
 }
 
-nav ul {  
+nav ul {   /*navigation at top*/
+    margin-top: 70px;
     margin-right: 20px;
     float:right;
     list-style-type: none;    
-}
-nav ul li {
+} 
+nav ul li { /*navigation at top*/
     display: inline-block;
     margin-left: 10px;
 }
-nav ul li a{
+nav ul li a{ /*navigation at top*/
     text-decoration: none;
 }
-nav ul a:hover{
+nav ul a:hover{ /*change color to yellow on mouse hover*/
     color:var(--hover);
 }
-nav ul a:focus{
+nav ul a:focus{ /*change border color to yellow on focus*/
     color:var(--hover);
 }
-article {
+article { /*content on right of screen*/
     justify-content: center;
     clear:both;
     border-radius: 12px;
@@ -85,7 +106,7 @@ article {
     font-size: 20px;
     overflow: auto;
 }
-aside {
+aside { /*content on left of screen*/
     border-radius:12px;
     margin-bottom: 2.5%;
     position: relative;
@@ -102,41 +123,47 @@ aside {
     text-align: center;
     background-color: var(--opblack);
 }
-aside p{
+aside p{ /*left side content text*/
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.bigimg {
-    justify-content: center;
+.bigimg { /*main work image*/
     position: absolute;
     display: inline-block;    
     border-radius: 13px;
     border: 2px solid black;
     height: 500px;
+    margin-bottom: 2%;
     border: 10%;
     width: 65%;
-    float:right;
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url("../assets/images/batman.png")  
 }
-.bigimg:hover{
+.bigimg:hover{ /*change border color to yellow on mouse hover*/
     border:2px solid var(--hover);
 }
-.bigimg:active{
+.bigimg:active{ /*change border color to yellow on focus*/
     border:2px solid var(--hover);
 }
 
-.bigimg:hover .overlay {
+.bigimg:hover .overlay {  /*overlay properties to big image on mouse hover*/
     width: 100%;
     left: 0;
  }
+ .bigimg p { /*text overlay on big image*/
+     
+     font-style: italic;
+     display:table;
+     background-color: black;
+     color: white
+ }
 
-.overlay{
+.overlay{ /*overlay properties to big image on mouse hover*/
     position: absolute;
     bottom: 0;
     left: 100%;
@@ -149,7 +176,7 @@ aside p{
     transition: .5s ease;
 }
 
-.overlay p {
+.overlay p { /*overlay properties to big image TEXT on mouse hover*/
     white-space: nowrap;
     position: absolute;
     color: white;
@@ -159,17 +186,55 @@ aside p{
     -ms-transform: translate(-50%, -50%);
     
  }
-footer{
+.workbox{ /*flexbox containing work links*/
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    padding: 20px;
+    display:flex;
+    flex-direction: row;
+    position: relative;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+    overflow:hidden;
+}
+.card { /*cards within flexbox*/
+    border: 2px solid black;
+    align-items: center;
+    margin: .5%;
+    border-radius: 13px;
+    width: 250px;
+    flex: 0 0 300px;
+    overflow: hidden;
+}
+.card p { /*text on cards*/
+    position:relative;
+    font-style: italic;
+    background-color: black;
+    color: white
+}
+ .card img { /*images in cards*/
+    flex: 1 0 400px;
+    height:200px;
+    /* max-height: 100%;
+    min-width: 100%; */
+    object-fit: cover;
+    vertical-align: bottom;   
+}
+ .card:hover  { /*change border color to yellow on mouse hover*/
+    border: 2px solid var(--hover);
+ }
+ footer{ /*sticky footer with contact links/info*/
     position:fixed;
     padding: 10px 10px 0px 10px;
-   
+    margin-top: 10%;
     background-color:var(--opwhite);
     bottom: 0;
     font-size: 40px;
     width:100%;
     height:100px;
 }
-footer h1{
+footer h1{ /*contact me in footer*/
     display: block;
     float: left;
     font-size: 40px;
@@ -177,38 +242,51 @@ footer h1{
     margin-left: 20px;
     color:black;
 }
-footer nav  {  
+footer nav  {   /*contact links*/
     display: block;
     margin-right:20px;
     float: right;
+    margin-top: 0%;
     font-size: 40px;
     font-weight: bold;
     
 }
 
-footer nav ul {  
+footer nav ul {  /*contact links*/
     float:right;
     list-style-type: none;  
     margin-right: 20px; 
+    margin-top:0%;
     width: 100%; 
 }
-footer nav ul li {
+footer nav ul li {/*contact links*/
     display: inline-block;
     margin-left: 10px;
 }
-footer nav ul li a{
+footer nav ul li a{/*contact links*/
     text-decoration: none;
 }
-footer nav ul a:hover{
+footer nav ul a:hover{ /*change border color to yellow on mouse hover, irrelevant while using images*/
     color:var(--hover);
 }
-footer nav ul a:focus{
+footer nav ul a:focus{/*change border color to yellow on focus, irrelevant while using images*/
     color:var(--hover);
 }
 
 
-@media screen and (max-width: 480px) {
-    .bigimg {
-         width: 400px;
+@media screen and (max-width: 768px) {
+    .workbox,
+    .card,
+    .card img {
+         flex-direction: column;
+         flex-wrap:wrap;
+        flex: 2 0 500;
     }
+}
+
+@media screen  and (max-width: 768px) {
+    .nav{
+        font-size 30px;
+    }
+    
 }
