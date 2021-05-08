@@ -1,6 +1,7 @@
 Lance Bailey's Portfolio
 
 This is a place for me to showcase my talents and abilities, with consistent updates to reflect new skills, creative ideas, or projects. Eventually all images will be hosted within the repository as the scope of creativity and skill level increases.
+**all current images are placeholder**
 
 https://lancebailey26.github.io/Portfolio/
 
